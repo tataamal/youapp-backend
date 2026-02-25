@@ -8,6 +8,8 @@ import { UsersModule } from './modules/users/users.module';
 import { ProfileModule } from './modules/profile/profile.module';
 import { ChatModule } from './modules/chat/chat.module';
 import { NotificationModule } from './modules/notification/notification.module';
+import { RabbitMqService } from './modules/notification/rabbitmq.service';
+import { MessageConsumerService } from './modules/notification/message-consumer.service';
 
 @Module({
   imports: [
@@ -15,7 +17,6 @@ import { NotificationModule } from './modules/notification/notification.module';
       isGlobal: true,
       envFilePath: '.env',
     }),
-
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -27,13 +28,9 @@ import { NotificationModule } from './modules/notification/notification.module';
     }),
 
     AuthModule,
-
     UsersModule,
-
     ProfileModule,
-
     ChatModule,
-
     NotificationModule,
   ],
   controllers: [AppController],
