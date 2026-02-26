@@ -35,8 +35,6 @@ Silakan copy menjadi `.env` sesuai kebutuhan kamu.
 
 ---
 
-# 1) Local Development — Run with Docker Compose (Recommended)
-
 ## 1. Docker Services
 
 ```bash
